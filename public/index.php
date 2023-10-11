@@ -16,6 +16,8 @@ $container->set('renderer', function () {
 $app = AppFactory::createFromContainer($container);
 $app->addErrorMiddleware(true, true, true);
 
+$users = ['mike', 'mishel', 'adel', 'keks', 'kamila'];
+
 $app->get('/', function ($request, $response) {
     $response->getBody()->write('Welcome to Slim!');
     return $response;
@@ -23,9 +25,9 @@ $app->get('/', function ($request, $response) {
     // return $response->write('Welcome to Slim!');
 });
 
-$app->get('/users', function ($request, $response) {
-    return $response->write('GET /users');
-});
+//$app->get('/users', function ($request, $response) {
+//    return $response->write('GET /users');
+//});
 
 //$app->post('/users', function ($request, $response) {
 //    return $response->write('POST /users');
@@ -46,6 +48,15 @@ $app->get('/users/{id}', function ($request, $response, $args) {
     // $this доступен внутри анонимной функции благодаря https://php.net/manual/ru/closure.bindto.php
     // $this в Slim это контейнер зависимостей
     return $this->get('renderer')->render($response, 'users/show.phtml', $params);
+});
+
+$app->get('/users', function ($request, $response) use ($users) {
+
+    $term = $request->getQueryParam('term');
+    $filteredUsers = array_filter($users, fn($user) => str_contains($user, $term));
+    $params = ['users' => $filteredUsers];
+
+    return $this->get('renderer')->render($response, 'users/index.phtml', $params);
 });
 
 $app->run();

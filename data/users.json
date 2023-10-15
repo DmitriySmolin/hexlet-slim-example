@@ -1,0 +1,49 @@
+{
+    "users": [
+        {
+            "nickname": "test",
+            "email": "test@gmail.com",
+            "id": "652aad7667a9f"
+        },
+        {
+            "nickname": "test2",
+            "email": "test2@gmail.com",
+            "id": "123aad2fff2fg"
+        },
+        {
+            "nickname": "test3",
+            "email": "test@mail.ru",
+            "id": "652ba594ab4b7"
+        },
+        {
+            "nickname": "2",
+            "email": "3",
+            "id": "652ba5e7e9f9b"
+        },
+        {
+            "nickname": "5",
+            "email": "5",
+            "id": "652ba7753a672"
+        },
+        {
+            "nickname": "5",
+            "email": "5",
+            "id": "652ba7e9b6987"
+        },
+        {
+            "nickname": "3",
+            "email": "3",
+            "id": "652ba80eb21a2"
+        },
+        {
+            "nickname": "test",
+            "email": "d",
+            "id": "652ba82e97c34"
+        },
+        {
+            "nickname": "6",
+            "email": "6",
+            "id": "652ba84b4b79c"
+        }
+    ]
+}

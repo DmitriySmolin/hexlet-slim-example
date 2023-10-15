@@ -2,7 +2,9 @@
     <input type="search" name="term" value="<?= htmlspecialchars($term) ?>" />
     <input type="submit" value="Search" />
 </form>
-
+<div style="color:green">
+    <?=  $flash['success'][0]?>
+</div>
 <?php foreach ($users as $user): ?>
     <ul>
         <li><?= $user ?></li>
